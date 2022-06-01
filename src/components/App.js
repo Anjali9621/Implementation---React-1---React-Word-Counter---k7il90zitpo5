@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../styles/App.css";
 const App = () => {
   const [text, settext] = useState("");
-  const [max, setmax] = useState(84);
+  const [size, setsize] = useState(0);
+  const [max, setmax] = useState(50);
 
   return (
     <div id="main">
@@ -26,7 +27,12 @@ const App = () => {
       />
       <br />
       <h3>Font Size Picker</h3>
-      <input type="range" max="32px" min="16" />
+      <input
+        type="range"
+        max="32px"
+        min="16"
+        onChange={(e) => setsize(e.target.value)}
+      />
     </div>
   );
 };
